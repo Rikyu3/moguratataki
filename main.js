@@ -79,9 +79,12 @@ ScoreLabel = Class.create(Label,{ //Labelクラスを継承する
 	window.onload = function(){//初期化
 	game = new Game(320, 320);
 	game.preload('mogura.png');//ドロイド君画像を読み込み
-	game.pleload(['hakai.mp3']);
+	game.preload('hakai.mp3');
+	game.preload('bosu.mp3');
 	game.onload = function(){
 
+		var sound2 = game.assets['bosu.mp3'].clone();
+		sound2.play();
 
 		//スコアラベルを表示
 		scoreLabel=new ScoreLabel(5,5);

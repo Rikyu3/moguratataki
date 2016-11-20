@@ -2,6 +2,8 @@ enchant();
 //ドロイド君の出現数
 maxDroid = 30;　　　
 
+
+
 //穴クラスの定義
 Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 	initialize:function(x,y){
@@ -56,6 +58,8 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 			this.nextMode=1;
 			this.waitFor = game.frame+10; //待つフレーム数は10で一定
 			scoreLabel.add(1); //スコアに追加
+			var sound1 = game.assets['hakai.mp3'].clone();
+			sound1.play();
 		}
 	}
 });
@@ -72,10 +76,12 @@ ScoreLabel = Class.create(Label,{ //Labelクラスを継承する
 		this.text="SCORE:"+this.score; //表示を修正
 	}
 });
-window.onload = function(){//初期化
+	window.onload = function(){//初期化
 	game = new Game(320, 320);
 	game.preload('mogura.png');//ドロイド君画像を読み込み
+	game.pleload(['hakai.mp3']);
 	game.onload = function(){
+
 
 		//スコアラベルを表示
 		scoreLabel=new ScoreLabel(5,5);

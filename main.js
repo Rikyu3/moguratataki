@@ -77,6 +77,7 @@ ScoreLabel = Class.create(Label,{ //Labelクラスを継承する
 	}
 });
 	window.onload = function(){//初期化
+	enchant.Sound.enabledInMobileSafari = true;
 	game = new Game(320, 320);
 	game.preload('mogura.png');//ドロイド君画像を読み込み
 	game.preload('hakai.mp3');

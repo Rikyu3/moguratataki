@@ -76,28 +76,34 @@ ScoreLabel = Class.create(Label,{ //Labelクラスを継承する
 		this.text="SCORE:"+this.score; //表示を修正
 	}
 });
-	window.onload = function(){//初期化
-	enchant.Sound.enabledInMobileSafari = true;
-	game = new Game(320, 320);
-	game.preload('mogura.png');//ドロイド君画像を読み込み
-	game.preload('hakai.mp3');
-	game.preload('bosu.mp3');
-	game.onload = function(){
 
-		var sound2 = game.assets['bosu.mp3'].clone();
-		sound2.play();
+window.onload = function(){//初期化
 
-		//スコアラベルを表示
-		scoreLabel=new ScoreLabel(5,5);
-		game.rootScene.addChild(scoreLabel);
+	setTimeout(function() {
 
-		//穴を4x4に並べる
-		for(y=0;y<4;y++){
-			for(x=0;x<4;x++){
-				var pit = new Pit(x*48+20,y*48+20);
-				game.rootScene.addChild(pit);
+		enchant.Sound.enabledInMobileSafari = true;
+		game = new Game(320, 320);
+		game.preload('mogura.png');//ドロイド君画像を読み込み
+		game.preload('hakai.mp3');
+		game.preload('bosu.mp3');
+		game.onload = function(){
+
+			var sound2 = game.assets['bosu.mp3'].clone();
+			sound2.play();
+
+			//スコアラベルを表示
+			scoreLabel=new ScoreLabel(5,5);
+			game.rootScene.addChild(scoreLabel);
+
+			//穴を4x4に並べる
+			for(y=0;y<4;y++){
+				for(x=0;x<4;x++){
+					var pit = new Pit(x*48+20,y*48+20);
+					game.rootScene.addChild(pit);
+				}
 			}
-		}
-    }
-    game.start();
+	    }
+	    game.start();
+
+	}, 500);
 }

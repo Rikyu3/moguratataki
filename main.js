@@ -2,7 +2,7 @@ enchant();
 //ドロイド君の出現数
 maxDroid = 30;　　　
 
-
+var sound2;
 
 //穴クラスの定義
 Pit = Class.create(Sprite,{ //Spriteクラスを継承する
@@ -37,8 +37,11 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 
 					//ドロイド君の最大数を減らす
 					maxDroid--;
+					console.log(maxDroid);
 					//もしこれ以上ドロイド君は出現しないなら、穴を塞ぐ
-					if(maxDroid<=0)this.mode=3;
+					if(maxDroid<=0) {
+						this.mode=3;
+					}
 				}
 				break;
 			case 2://待つ
@@ -47,6 +50,8 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 				}
 				break;
 			case 3://なにもしない(この穴からもうドロイド君は出ない)
+				// console.log("test");
+				sound2.stop();
 				break;
 		}
 	},
@@ -88,7 +93,7 @@ window.onload = function(){//初期化
 		game.preload('bosu.mp3');
 		game.onload = function(){
 
-			var sound2 = game.assets['bosu.mp3'].clone();
+			sound2 = game.assets['bosu.mp3'].clone();
 			sound2.play();
 
 			//スコアラベルを表示

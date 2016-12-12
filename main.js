@@ -1,6 +1,6 @@
 enchant();
 //ドロイド君の出現数
-maxDroid = 30;　　　
+maxDroid = 50;　　　
 
 var sound2;
 

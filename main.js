@@ -58,9 +58,9 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 		}
 	},
 	hit:function(){ //ドロイド君を殴る
-		if(this.frame==5)return;//既に殴れた状態だったらなにもしない
+		if(this.frame==5)return;//既に殴られた状態だったらなにもしない
 		if(this.frame>=2){ // ドロイド君が半分以上出ていた場合
-			this.frame=5; //殴れたドロイド君
+			this.frame=5; //殴られたドロイド君
 			this.mode=2;  //待ちモードに入る
 			this.nextMode=1;
 			this.waitFor = game.frame+10; //待つフレーム数は10で一定

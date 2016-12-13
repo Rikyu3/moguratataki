@@ -52,7 +52,6 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 				}
 				break;
 			case 3://なにもしない(この穴からもうドロイド君は出ない)
-				// console.log("test");
 				sound2.stop();
 				break;
 		}

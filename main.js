@@ -18,7 +18,9 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 		this.waitFor =  game.frame+Math.floor(Math.random()*100);
 	},
 	tick:function(){ //ドロイド君が出るアニメーションを繰り返す
-		if(game.frame%2!=0)return; //4フレームごとに実行する
+		if(game.frame%2!=0) {
+			return; //4フレームごとに実行する
+}
 		switch(this.mode){
 			case 0: //穴からドロイド君がでてくる
 				this.frame++;
@@ -110,5 +112,5 @@ window.onload = function(){//初期化
 	    }
 	    game.start();
 
-	}, 500);
+	}, 500);　//読み込みを0.5秒遅らせる
 }

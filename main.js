@@ -41,7 +41,7 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 					maxDroid--;
 					console.log(maxDroid);
 					//もしこれ以上ドロイド君は出現しないなら、穴を塞ぐ
-					if(maxDroid<=0) {
+					if(maxDroid<=16) {
 						this.mode=3;
 					}
 				}
@@ -52,7 +52,9 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 				}
 				break;
 			case 3://なにもしない(この穴からもうドロイド君は出ない)
-				sound2.stop();
+				if(maxDroid<=1){
+					sound2.stop();
+				}
 				break;
 		}
 	},

@@ -54,6 +54,12 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 			case 3://なにもしない(この穴からもうドロイド君は出ない)
 				if(maxDroid<=1){
 					sound2.stop();
+					end = new Sprite(189, 97);
+		      end.image = game.assets["end.png"];
+		      end.x = (game.width-end.width)/2;
+		      end.y = (game.height-end.height)/2;
+		      game.rootScene.addChild(end);
+		      //end.visible = false;  //プレイヤーを非表示にする
 				}
 				break;
 		}
@@ -91,7 +97,7 @@ window.onload = function(){//初期化
 
 		enchant.Sound.enabledInMobileSafari = true;
 		game = new Game(320, 320);
-		game.preload('mogura.png');//ドロイド君画像を読み込み
+		game.preload('mogura.png','end.png');//ドロイド君画像を読み込み
 		game.preload('hakai.mp3');
 		game.preload('bosu.mp3');
 		game.onload = function(){

@@ -41,7 +41,7 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 					maxDroid--;
 					console.log(maxDroid);
 					//もしこれ以上ドロイド君は出現しないなら、穴を塞ぐ
-					if(maxDroid<=16) {
+					if(maxDroid<=15) {
 						this.mode=3;
 					}
 				}
@@ -52,7 +52,7 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 				}
 				break;
 			case 3://なにもしない(この穴からもうドロイド君は出ない)
-				if(maxDroid<=1){
+				if(maxDroid == 0){
 					sound2.stop();
 					end = new Sprite(189, 97);
 		      end.image = game.assets["end.png"];

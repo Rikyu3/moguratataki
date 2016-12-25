@@ -56,8 +56,9 @@ Pit = Class.create(Sprite,{ //Spriteクラスを継承する
 					sound2.stop();
 					end = new Sprite(189, 97);
 		      end.image = game.assets["end.png"];
-		      end.x = (game.width-end.width)/2;
-		      end.y = (game.height-end.height)/2;
+		      end.x = 23;
+		      //end.y = (game.height-end.height)/2;
+					end.y = 65;
 		      game.rootScene.addChild(end);
 		      //end.visible = false;  //プレイヤーを非表示にする
 				}
